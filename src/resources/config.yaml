@@ -1,0 +1,19 @@
+worker_processes : 10
+strategy:
+  type: RoundRobin
+upstreams:
+  - name: srv1
+    forward_to: <ipv4_address>
+    timeout_ms: 5000
+    weight: 100
+  - name: srv2
+    forward_to: <ipv4_address>
+    timeout_ms: 5000
+    weight: 500
+  - name: srv2
+    forward_to: https://...
+    timeout_ms: 5000
+    weight: 200
+
+
+
